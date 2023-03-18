@@ -36,13 +36,13 @@
 
     -->
     <main>
-      <h1>To-Do list app</h1>
+      <!-- <h1>To-Do list app</h1> -->
       <div id="app">
-        <label for="item-name">To-Do:</label>
         <form class="add-item">
+          <label for="item-name">To-Do:</label>
           <input
             type = "text"
-            name ="item"
+            name = "item"
             id = "item-name"
             placeholder = "wash dishes"
             required
@@ -50,11 +50,11 @@
           <input type="submit" value = "add item!"/>
         </form>
         
-        
+        <ul class = "item-list">
+          <li>loading...</li>
+        </ul>
       </div>
-      <ul class = "item-list">
-        <li>loading...</li>
-      </ul>
+      
     </main>
 
     <!-- This is where we add our awesome JavaScript code -->

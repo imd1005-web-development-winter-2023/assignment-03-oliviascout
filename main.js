@@ -8,19 +8,19 @@
 //
 
 // Constants
-const appID = "app";
+//const appID = "app";
 //const headingText = "To do. To done. ✅";
 
 // Variables
 
 // DOM Elements
-let appContainer = document.getElementById(appID);
+//let appContainer = document.getElementById(appID);
 
 //array of items and the related things
 const items = [];
-const itemList = document.querySelector("item-list");
-const itemForm = document.querySelector("add-item");
-const itemName = document.querySelector("item-name");
+const itemList = document.querySelector(".item-list");
+const itemForm = document.querySelector(".add-item");
+const itemName = document.querySelector("#item-name");
 
 //
 // Functions
@@ -45,13 +45,13 @@ const itemName = document.querySelector("item-name");
 
 
 //for when the form is submitted
-function addItem(){
-  //stop defulat submission
+function addListItem(e){
+  //stop default submission
   e.preventDefault();
 
   //get text
-  const itemName = item.value();
-  items.push(itemName);
+  const itemKind = itemName.value;
+  items.push(itemKind);
 
   //add and draw new list
   updateList(items, itemList);
@@ -73,9 +73,9 @@ function updateList(stuff, stuffList){
     listStuff.textContent = stuff[i];
 
     //animation thing
-    if(i == stuff.length - 1){
-      listStuff,classList,add("new-item-annimate");
-    }
+    /*if(i == stuff.length - 1){
+      listStuff.classList.add("new-item-annimate");
+    }*/
 
     //add item to list
     stuffList.appendChild(listStuff);
@@ -87,7 +87,7 @@ function updateList(stuff, stuffList){
 // Inits & Event Listeners
 //
 
-listForm.addEventListener("submit", addItem);
+itemForm.addEventListener("submit", addListItem);
 updateList(items, itemList);
 
-inititialise();
+//inititialise();
