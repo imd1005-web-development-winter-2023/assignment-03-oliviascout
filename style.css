@@ -26,8 +26,26 @@
   PAGE / BODY
 */
 
+.app {
+  margin-top: 10px;
+}
 
+.list ul {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  list-style-type: none;
+  row-gap: 20px;
+  column-gap: 20px;
+}
 
+.list ul li {
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  border: 2px solid #30640a;
+  border-radius: 10px;
+  background-color: #cef4b2;
+}
 
 
 body {
