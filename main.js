@@ -78,13 +78,17 @@ function updateList(stuff, stuffList){
 
     //add item to list
     stuffList.appendChild(listStuff);
-
   }
 }
 
-function makeDone(){
-  li.classList.add("done");
+function makeDone(e){
+  const toDo = document.getElementById(e.target.id);
+  toDo.classList.add("done");
   updateList(items, itemList);
+}
+
+function removeDone(){
+
 }
 
 //
@@ -92,7 +96,8 @@ function makeDone(){
 //
 
 itemForm.addEventListener("submit", addListItem);
+//itemForm.addEveetListener("remove", removeDone);
 updateList(items, itemList);
-//toDos.addEventListener('click', makeDone);
+toDos.addEventListener('click', makeDone);
 
 //inititialise();
