@@ -24,6 +24,7 @@ const itemName = document.querySelector("#item-name");
 
 //thing for selecting
 const toDos = document.querySelectorAll("li");
+const removeButton = document.getElementById("button");
 
 //
 // Functions
@@ -88,6 +89,10 @@ function makeDone(e){
 }
 
 function removeDone(){
+  //let var = document.getEleemntsByClassName(done)?
+  //does that work?
+  //not sure how id remove them from there tho
+  //var.remove(); maybe? idk
 
 }
 
@@ -96,8 +101,9 @@ function removeDone(){
 //
 
 itemForm.addEventListener("submit", addListItem);
-//itemForm.addEveetListener("remove", removeDone);
+//
 updateList(items, itemList);
 toDos.addEventListener('click', makeDone);
+removeButton.addEventListener('click', removeDone);
 
 //inititialise();
