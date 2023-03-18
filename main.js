@@ -22,6 +22,9 @@ const itemList = document.querySelector(".item-list");
 const itemForm = document.querySelector(".add-item");
 const itemName = document.querySelector("#item-name");
 
+//thing for selecting
+const toDos = document.querySelectorAll("li");
+
 //
 // Functions
 //
@@ -71,16 +74,17 @@ function updateList(stuff, stuffList){
   for(let i = 0; i < stuff.length; i++){
     const listStuff = document.createElement("li");
     listStuff.textContent = stuff[i];
-
-    //animation thing
-    /*if(i == stuff.length - 1){
-      listStuff.classList.add("new-item-annimate");
-    }*/
+    //listStuff.addEventListener("click", makeDone);
 
     //add item to list
     stuffList.appendChild(listStuff);
 
   }
+}
+
+function makeDone(){
+  li.classList.add("done");
+  updateList(items, itemList);
 }
 
 //
@@ -89,5 +93,6 @@ function updateList(stuff, stuffList){
 
 itemForm.addEventListener("submit", addListItem);
 updateList(items, itemList);
+//toDos.addEventListener('click', makeDone);
 
 //inititialise();
