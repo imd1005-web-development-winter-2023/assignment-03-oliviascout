@@ -36,27 +36,31 @@
 
     -->
     <main>
-      <!-- <h1>To-Do list app</h1> -->
-      <div class="app">
-        <form class="add-item">
-          <label for="item-name">To-Do:</label>
-          <input
-            type = "text"
-            name = "item"
-            id = "item-name"
-            placeholder = "wash dishes"
-            required
-          />
-          <input type="submit" value = "add item!"/>
-        </form>
-        
-        <div class="list">
-          <ul class = "item-list">
-            <li>loading...</li>
-          </ul>
+      <section>
+        <h1>To-Do list app!</h1>  
+        <p>add your to-dos, and click to mark them as done!</p>
+        <div class="form">
+          <form class="add-item">
+            <label for="item-name">To-Do:</label>
+            <input
+              type = "text"
+              name = "item"
+              id = "item-name"
+              placeholder = "wash dishes"
+              required
+            />
+            <input type="submit" value = "add item!"/>
+          </form>
         </div>
-        
+      </section>
+      
+
+      <div class="list">
+        <ul class = "item-list">
+          <li>loading...</li>
+        </ul>
       </div>
+        
       
     </main>
 

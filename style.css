@@ -26,8 +26,11 @@
   PAGE / BODY
 */
 
-.app {
+.form {
   margin-top: 10px;
+  margin-right: 100px;
+  margin-left: 10px;
+  display: flex;
 }
 
 .list ul {
@@ -42,8 +45,14 @@
 .list ul li {
   padding: 20px 10px 20px 10px;
   text-align: center;
-  border: 2px solid #30640a;
+  border: 2px solid #64130a;
+  background-color: #f4bab2;
   border-radius: 10px;
+  
+}
+
+.list ul li.done {
+  border: 2px solid #30640a;
   background-color: #cef4b2;
 }
 
