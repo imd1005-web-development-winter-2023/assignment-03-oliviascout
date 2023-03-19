@@ -28,7 +28,7 @@
 
 .form {
   margin-top: 10px;
-  margin-right: 100px;
+  margin-right: 10px;
   margin-left: 10px;
   display: flex;
 }
@@ -49,12 +49,31 @@
   color: black;
   background-color: #f4bab2;
   border-radius: 10px;
-  
 }
 
-.list ul li.done {
+.done-tasks {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 50px;
+  display: flex;
+}
+
+.done-list ul {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  list-style-type: none;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.done-list ul li {
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  color: black;
   border: 2px solid #30640a;
   background-color: #cef4b2;
+  border-radius: 10px;
 }
 
 

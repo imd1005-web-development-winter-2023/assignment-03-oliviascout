@@ -22,9 +22,9 @@ const itemList = document.querySelector(".item-list");
 const itemForm = document.querySelector(".add-item");
 const itemName = document.querySelector("#item-name");
 
-//thing for selecting
-//const toDos = document.querySelectorAll("li");
-//const toDoRemoveButton = document.createElement("button");
+//finished items!!! woo!!!
+const dones = [];
+const donesList = document.querySelector(".done-list");
 
 //
 // Functions
@@ -106,8 +106,6 @@ function updateList(stuff, stuffList){
   updateList(items, itemList);
 }*/
 
-
-
 function removeDone(e){
   if(e.target.nodeName !== "BUTTON"){
     return;
@@ -116,6 +114,9 @@ function removeDone(e){
   //get the index
   const idx = e.target.dataset.index;
 
+  //add to finished list
+  addDone(items, dones, donesList, idx);
+
   //remove it
   console.log(idx);
   items.splice(idx, 1);
@@ -123,6 +124,24 @@ function removeDone(e){
   //redraw list
   updateList(items, itemList);
 } 
+
+function addDone(stuff, done, doneList, index){
+  /* const doneKind =
+  done.push(doneKind);
+  //clean
+  while(doneList.firstChild){
+    doneList.removeChild(doneList.firstChild);
+  }
+
+  //add list
+  for(let i = 0; i < done.length; i++){
+    const doneStuff = document.createElement("li");
+    doneStuff.textContent = stuff[index];
+    doneList.appendChild(doneStuff);
+  }*/
+  
+  
+}
 
 
 //
