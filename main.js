@@ -74,11 +74,13 @@ function updateList(stuff, stuffList){
     const listStuff = document.createElement("li");
     const button = document.createElement("button");
     button.textContent = stuff[i];
+    button.dataset.index = i;
+
+    //console.log(button.dataset.index);
+    
     //listStuff.textContent = stuff[i];
     //listStuff.addEventListener("click", makeDone);
     listStuff.appendChild(button);
-
-    toDoRemoveButton.dataset.index = i;
 
     //add item to list
     stuffList.appendChild(listStuff);
@@ -115,6 +117,6 @@ itemForm.addEventListener("submit", addListItem);
 //
 updateList(items, itemList);
 //toDos.addEventListener('click', makeDone);
-removeButton.addEventListener('click', removeDone);
+itemList.addEventListener('click', removeDone);
 
 //inititialise();
