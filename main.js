@@ -87,7 +87,7 @@ function updateList(stuff, stuffList){
   }
 }
 
-function makeDone(e){
+/*function makeDone(e){
   if(e.target.nodeName !== "BUTTON"){
     return;
   }
@@ -98,16 +98,17 @@ function makeDone(e){
   console.log(idx);
   console.log(items[idx]);
 
-  (items[idx]).classList.add("done");
+  items.
 
   //items.style.transform;
   
   //redraw list
   updateList(items, itemList);
-}
+}*/
 
 
-/* function removeDone(e){
+
+function removeDone(e){
   if(e.target.nodeName !== "BUTTON"){
     return;
   }
@@ -121,7 +122,7 @@ function makeDone(e){
 
   //redraw list
   updateList(items, itemList);
-} */
+} 
 
 
 //
@@ -131,7 +132,7 @@ function makeDone(e){
 itemForm.addEventListener("submit", addListItem);
 //
 updateList(items, itemList);
-itemList.addEventListener('click', makeDone);
-//itemList.addEventListener('click', removeDone);
+//itemList.addEventListener('click', makeDone);
+itemList.addEventListener('click', removeDone);
 
 //inititialise();
