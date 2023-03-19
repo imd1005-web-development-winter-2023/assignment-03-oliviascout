@@ -23,8 +23,8 @@ const itemForm = document.querySelector(".add-item");
 const itemName = document.querySelector("#item-name");
 
 //thing for selecting
-const toDos = document.querySelectorAll("li");
-const toDoRemoveButton = document.createElement("button");
+//const toDos = document.querySelectorAll("li");
+//const toDoRemoveButton = document.createElement("button");
 
 //
 // Functions
@@ -87,15 +87,27 @@ function updateList(stuff, stuffList){
   }
 }
 
-/*function makeDone(e){
-  const toDo = document.getElementById(e.target.id);
-  toDo.classList.add("done");
+function makeDone(e){
+  if(e.target.nodeName !== "BUTTON"){
+    return;
+  }
+
+  //get the index
+  const idx = e.target.dataset.index;
+
+  console.log(idx);
+  console.log(items[idx]);
+
+  (items[idx]).classList.add("done");
+
+  //items.style.transform;
+  
+  //redraw list
   updateList(items, itemList);
-}*/
+}
 
 
-
-function removeDone(e){
+/* function removeDone(e){
   if(e.target.nodeName !== "BUTTON"){
     return;
   }
@@ -109,7 +121,8 @@ function removeDone(e){
 
   //redraw list
   updateList(items, itemList);
-}
+} */
+
 
 //
 // Inits & Event Listeners
@@ -118,7 +131,7 @@ function removeDone(e){
 itemForm.addEventListener("submit", addListItem);
 //
 updateList(items, itemList);
-//toDos.addEventListener('click', makeDone);
-itemList.addEventListener('click', removeDone);
+itemList.addEventListener('click', makeDone);
+//itemList.addEventListener('click', removeDone);
 
 //inititialise();
