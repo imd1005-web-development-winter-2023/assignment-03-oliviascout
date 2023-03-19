@@ -24,7 +24,7 @@ const itemName = document.querySelector("#item-name");
 
 //thing for selecting
 const toDos = document.querySelectorAll("li");
-const removeButton = document.getElementById("button");
+const toDoRemoveButton = document.createElement("button");
 
 //
 // Functions
@@ -37,12 +37,10 @@ const removeButton = document.getElementById("button");
     console.error("Error: Could not find app contianer");
     return;
   }
-
   // Create an h1 and add it to our app
   const h1 = document.createElement("h1");
   h1.innerText = headingText;
   appContainer.appendChild(h1);
-
   // Init complete
   console.log("App successfully initialised");
 }*/
@@ -74,26 +72,39 @@ function updateList(stuff, stuffList){
   //add list
   for(let i = 0; i < stuff.length; i++){
     const listStuff = document.createElement("li");
-    listStuff.textContent = stuff[i];
+    const button = document.createElement("button");
+    button.textContent = stuff[i];
+    //listStuff.textContent = stuff[i];
     //listStuff.addEventListener("click", makeDone);
+    listStuff.appendChild(button);
+
+    toDoRemoveButton.dataset.index = i;
 
     //add item to list
     stuffList.appendChild(listStuff);
   }
 }
 
-function makeDone(e){
+/*function makeDone(e){
   const toDo = document.getElementById(e.target.id);
   toDo.classList.add("done");
   updateList(items, itemList);
-}
+}*/
 
-function removeDone(){
-  //let var = document.getEleemntsByClassName(done)?
-  //does that work?
-  //not sure how id remove them from there tho
-  //var.remove(); maybe? idk
 
+
+function removeDone(e){
+  if(e.target.nodeName !== "BUTTON"){
+    return;
+  }
+
+  //get the index
+  const idx = e.target.dataset.index;
+
+  //remove it
+  console.log(idx);
+  items.splice(idx);
+  updateList(items, itemList);
 }
 
 //
@@ -103,7 +114,7 @@ function removeDone(){
 itemForm.addEventListener("submit", addListItem);
 //
 updateList(items, itemList);
-toDos.addEventListener('click', makeDone);
+//toDos.addEventListener('click', makeDone);
 removeButton.addEventListener('click', removeDone);
 
 //inititialise();
