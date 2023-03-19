@@ -105,7 +105,9 @@ function removeDone(e){
 
   //remove it
   console.log(idx);
-  items.splice(idx);
+  items.splice(idx, 1);
+
+  //redraw list
   updateList(items, itemList);
 }
 
