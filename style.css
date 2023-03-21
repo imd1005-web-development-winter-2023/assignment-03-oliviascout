@@ -51,14 +51,14 @@
   border-radius: 10px;
 }
 
-.done-tasks {
+.done-lis {
   margin-top: 10px;
   margin-right: 10px;
   margin-left: 50px;
   display: flex;
 }
 
-.done-list ul {
+.done-lis ul {
   margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
@@ -67,7 +67,7 @@
   column-gap: 20px;
 }
 
-.done-list ul li {
+.done-lis ul li {
   padding: 20px 10px 20px 10px;
   text-align: center;
   color: black;

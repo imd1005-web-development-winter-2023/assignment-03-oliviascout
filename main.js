@@ -106,6 +106,21 @@ function updateList(stuff, stuffList){
   updateList(items, itemList);
 }*/
 
+function updateDoneList(dones, donesList){
+  //clear list
+  while(donesList.firstChild){
+    donesList.removeChild(donesList.firstChild);
+  }
+
+  //add items to list
+  for(let i = 0; i < dones.length; i++){
+    const listDones = document.createElement("li");
+    listDones.textContent = dones[i];
+
+    donesList.appendChild(listDones);
+  }
+}
+
 function removeDone(e){
   if(e.target.nodeName !== "BUTTON"){
     return;
@@ -114,8 +129,7 @@ function removeDone(e){
   //get the index
   const idx = e.target.dataset.index;
 
-  //add to finished list
-  addDone(items, dones, donesList, idx);
+  dones.push(items[idx]);
 
   //remove it
   console.log(idx);
@@ -123,6 +137,19 @@ function removeDone(e){
 
   //redraw list
   updateList(items, itemList);
+  updateDoneList(dones, donesList);
+} 
+
+function clearDones(e){
+  if(e.target.nodeName !== "BUTTON"){
+    return;
+  }
+
+  //remove it
+  dones.splice(idx, 1);
+
+  updateList(items, itemList);
+  updateDoneList(dones, donesList);
 } 
 
 function addDone(stuff, done, doneList, index){
@@ -153,5 +180,6 @@ itemForm.addEventListener("submit", addListItem);
 updateList(items, itemList);
 //itemList.addEventListener('click', makeDone);
 itemList.addEventListener('click', removeDone);
+updateDoneList(dones, donesList);
 
 //inititialise();
