@@ -91,20 +91,31 @@ function updateList(stuff, stuffList){
   if(e.target.nodeName !== "BUTTON"){
     return;
   }
-
   //get the index
   const idx = e.target.dataset.index;
-
   console.log(idx);
   console.log(items[idx]);
-
   items.
-
   //items.style.transform;
   
   //redraw list
   updateList(items, itemList);
 }*/
+
+function updateDoneList(dones, donesList){
+  //clear list
+  while(donesList.firstChild){
+    donesList.removeChild(donesList.firstChild);
+  }
+
+  //add items to list
+  for(let i = 0; i < dones.length; i++){
+    const listDones = document.createElement("li");
+    listDones.textContent = dones[i];
+
+    donesList.appendChild(listDones);
+  }
+}
 
 function removeDone(e){
   if(e.target.nodeName !== "BUTTON"){
@@ -114,8 +125,7 @@ function removeDone(e){
   //get the index
   const idx = e.target.dataset.index;
 
-  //add to finished list
-  addDone(items, dones, donesList, idx);
+  dones.push(items[idx]);
 
   //remove it
   console.log(idx);
@@ -123,6 +133,19 @@ function removeDone(e){
 
   //redraw list
   updateList(items, itemList);
+  updateDoneList(dones, donesList);
+} 
+
+function clearDones(e){
+  if(e.target.nodeName !== "BUTTON"){
+    return;
+  }
+
+  //remove it
+  dones.splice(idx, 1);
+
+  updateList(items, itemList);
+  updateDoneList(dones, donesList);
 } 
 
 function addDone(stuff, done, doneList, index){
@@ -132,7 +155,6 @@ function addDone(stuff, done, doneList, index){
   while(doneList.firstChild){
     doneList.removeChild(doneList.firstChild);
   }
-
   //add list
   for(let i = 0; i < done.length; i++){
     const doneStuff = document.createElement("li");
@@ -153,5 +175,8 @@ itemForm.addEventListener("submit", addListItem);
 updateList(items, itemList);
 //itemList.addEventListener('click', makeDone);
 itemList.addEventListener('click', removeDone);
+updateDoneList(dones, donesList);
 
 //inititialise();
+
+//testing testing
