@@ -25,26 +25,11 @@ const itemName = document.querySelector("#item-name");
 //finished items!!! woo!!!
 const dones = [];
 const donesList = document.querySelector(".done-list");
+const donesButton = document.getElementById("done-button");
 
 //
 // Functions
 //
-
-// Add a heading to the app container\
-/*function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
-  // Init complete
-  console.log("App successfully initialised");
-}*/
-
 
 //for when the form is submitted
 function addListItem(e){
@@ -87,21 +72,6 @@ function updateList(stuff, stuffList){
   }
 }
 
-/*function makeDone(e){
-  if(e.target.nodeName !== "BUTTON"){
-    return;
-  }
-  //get the index
-  const idx = e.target.dataset.index;
-  console.log(idx);
-  console.log(items[idx]);
-  items.
-  //items.style.transform;
-  
-  //redraw list
-  updateList(items, itemList);
-}*/
-
 function updateDoneList(dones, donesList){
   //clear list
   while(donesList.firstChild){
@@ -117,6 +87,7 @@ function updateDoneList(dones, donesList){
   }
 }
 
+//removes from main list
 function removeDone(e){
   if(e.target.nodeName !== "BUTTON"){
     return;
@@ -142,28 +113,10 @@ function clearDones(e){
   }
 
   //remove it
-  dones.splice(idx, 1);
-
-  updateList(items, itemList);
+  console.log("push");
+  dones.splice(0);
   updateDoneList(dones, donesList);
 } 
-
-function addDone(stuff, done, doneList, index){
-  /* const doneKind =
-  done.push(doneKind);
-  //clean
-  while(doneList.firstChild){
-    doneList.removeChild(doneList.firstChild);
-  }
-  //add list
-  for(let i = 0; i < done.length; i++){
-    const doneStuff = document.createElement("li");
-    doneStuff.textContent = stuff[index];
-    doneList.appendChild(doneStuff);
-  }*/
-  
-  
-}
 
 
 //
@@ -176,7 +129,6 @@ updateList(items, itemList);
 //itemList.addEventListener('click', makeDone);
 itemList.addEventListener('click', removeDone);
 updateDoneList(dones, donesList);
+donesButton.addEventListener('click', clearDones);
 
 //inititialise();
-
-//testing testing
