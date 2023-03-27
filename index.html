@@ -13,6 +13,7 @@
     <!-- We are using a CSS Reset file to standardize browser default css -->
     <link rel="stylesheet" href="reset.css" />
 
+  
     <!-- This is where all of our awesome CSS code goes -->
     <link rel="stylesheet" href="style.css" />
 
@@ -31,31 +32,33 @@
       - Have you conducted a code review and left a GitHub Issue on your team member's repo?
     -->
     <main>
-      <section>
-        <h1>To-Do list app!</h1>  
-        <p>add your to-dos, and click to mark them as done!</p>
-        <div class="form">
-          <form class="add-item">
-            <label for="item-name">To-Do:</label>
-            <input
-              type = "text"
-              name = "item"
-              id = "item-name"
-              placeholder = "wash dishes"
-              required
-            />
-            <input type="submit" value = "add item!"/>
-          </form>
+      <div class="both">
+        <div class="left">
+          <div class = "first">
+            <h1>To-Do list app!</h1>  
+            <p>add your to-dos, and click to mark them as done!</p>
+            <div class="form">
+              <form class="add-item">
+                <label for="item-name">To-Do:</label>
+                <input
+                  type = "text"
+                  name = "item"
+                  id = "item-name"
+                  placeholder = "wash dishes"
+                  required
+                />
+                <input type="submit" value = "add item!"/>
+              </form>
+            </div>
+            
+          </div>
+          <div class="list">
+            <ul class = "item-list">
+              <li>loading...</li>
+            </ul>
+          </div>
         </div>
-      </section>
-    
-      <div class="list">
-        <ul class = "item-list">
-          <li>loading...</li>
-        </ul>
-      </div>
 
-      <section>
         <div class="done-lis">
           <div><h1>Finished tasks:</h1>  
             <button type = "button" id = "done-button">Remove finished tasks</button>
@@ -63,9 +66,8 @@
           <ul class = "done-list">
             <li>waiting...</li>
           </ul>
-        </div>
-      </section>
-      
+        </div> 
+      </div>
     </main>
 
     <!-- This is where we add our awesome JavaScript code -->
