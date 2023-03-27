@@ -26,6 +26,11 @@
   PAGE / BODY
 */
 
+.both{
+  display: flex;
+  flex-direction: row;
+}
+
 .left{
   display: flex;
   flex-direction: row;
@@ -122,6 +127,7 @@ main {
     display: flex;
     flex-direction: column;
   }
+
   .both{
     display: flex;
     flex-direction: column;
